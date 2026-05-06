@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  /* Warm base shared across bilko.run apps */
+  --color-warm-50:  #fefdfb;
+  --color-warm-100: #faf7f2;
+  --color-warm-200: #f0e9df;
+  --color-warm-300: #e0d5c5;
+  --color-warm-400: #c4b49e;
+  --color-warm-500: #a89478;
+  --color-warm-600: #8c7660;
+  --color-warm-700: #6b5a49;
+  --color-warm-800: #4a3d33;
+  --color-warm-900: #2d2520;
+  --color-warm-950: #1a1613;
+
+  /* Fire accent — primary button + CTAs */
+  --color-fire-50:  #fff7f0;
+  --color-fire-100: #ffede0;
+  --color-fire-200: #ffd6b8;
+  --color-fire-300: #ffb380;
+  --color-fire-400: #ff8a47;
+  --color-fire-500: #ff6b1a;
+  --color-fire-600: #e85a0a;
+  --color-fire-700: #c04808;
+
+  /* Indigo — HeadlineGrader's hero theme accent (gradient + glow are baked into kit.tsx,
+     but indigo-* utility classes aren't used directly on the page). */
+  --color-indigo-400: #818cf8;
+  --color-indigo-500: #6366f1;
+  --color-indigo-600: #4f46e5;
+
+  /* Grade colors used by ScoreCard's grade letter */
+  --color-grade-a: #16a34a;
+  --color-grade-b: #2563eb;
+  --color-grade-c: #eab308;
+  --color-grade-d: #f97316;
+  --color-grade-f: #ef4444;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: #faf7f2;
+  color: #2d2520;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Display + label utilities (mirrors host) ───────────── */
+.text-display-lg {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  font-weight: 900;
+}
+
+.text-display-md {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+/* CompareLayout's winner/tie banner uses this */
+.text-display-sm {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+.text-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
+/* ── Shadow system (mirrors host) ───────────────────────── */
+.shadow-elevation-1 {
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-elevation-2 {
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-dark-elevation {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 0 0 1px rgba(0, 0, 0, 0.3),
+    0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Animations ─────────────────────────────────────────── */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-slide-up { animation: slide-up 0.5s ease-out both; }
+.animate-fade-in { animation: fade-in 0.4s ease-out both; }
