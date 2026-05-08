@@ -1,7 +1,27 @@
 import { useState, useEffect } from 'react';
 import { SignInButton } from '@clerk/clerk-react';
 import { useToolApi } from './useToolApi.js';
-import { ToolHero, ScoreCard, SectionBreakdown, CompareLayout, Rewrites, CrossPromo, track } from './kit.js';
+import { ToolHero, ScoreCard, SectionBreakdown, CompareLayout, Rewrites, CrossPromo, track } from '@bilkobibitkov/host-kit';
+
+const HEADLINE_GRADER_THEME = {
+  heroGradient: 'from-[#1a1530] via-[#0f0d1a] to-[#1a1530]',
+  glowColor: 'rgba(99,102,241,0.14)',
+  accentText: 'text-indigo-400',
+  accentTextLight: 'text-indigo-500',
+};
+
+const CROSS_PROMO_ITEMS = [
+  {
+    name: 'PageRoast',
+    href: 'https://bilko.run/products/page-roast',
+    hook: 'Great headline. Now roast the page it lives on.',
+  },
+  {
+    name: 'ThreadGrader',
+    href: 'https://bilko.run/products/thread-grader',
+    hook: 'Headlines are hooks. Test yours in a full thread.',
+  },
+];
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -169,6 +189,7 @@ export function HeadlineGraderPage() {
 
       {/* ── Hero + Input ─────────────────────────────────────────────── */}
       <ToolHero
+        theme={HEADLINE_GRADER_THEME}
         title="Score or generate headlines"
         tagline="AI grades your headlines — or writes new ones from your description"
       >
@@ -340,6 +361,7 @@ export function HeadlineGraderPage() {
               grade={result.grade}
               verdict={result.diagnosis}
               toolName="Headline Grader"
+              theme={HEADLINE_GRADER_THEME}
             />
             {/* Quick diagnosis — weakest pillar */}
             {(() => {
@@ -466,7 +488,7 @@ export function HeadlineGraderPage() {
       </div>
 
       {/* ── Cross Promo ──────────────────────────────────────────────── */}
-      <CrossPromo />
+      <CrossPromo items={CROSS_PROMO_ITEMS} />
 
       {/* ── Long-form below-fold content ──────────────────────────── */}
       {!result && !compareResult && !generateResult && !loading && !generating && (

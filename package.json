@@ -10,6 +10,7 @@
     "sync": "rm -rf ../Bilko/public/projects/headline-grader && cp -r dist ../Bilko/public/projects/headline-grader"
   },
   "dependencies": {
+    "@bilkobibitkov/host-kit": "^0.1.0",
     "@clerk/clerk-react": "^5.60.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

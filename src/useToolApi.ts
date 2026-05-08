@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useAuth, useUser, SignInButton } from '@clerk/clerk-react';
-import { track } from './kit.js';
+import { track } from '@bilkobibitkov/host-kit';
 
 // Same-origin in production (`bilko.run/projects/headline-grader/` ➜ `bilko.run/api`).
 // In `vite dev` set VITE_API_URL=http://localhost:4000 to proxy to a local host.
