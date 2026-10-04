@@ -8,12 +8,12 @@ importers:
 
   .:
     dependencies:
-      '@bilkobibitkov/host-kit':
-        specifier: ^0.1.0
-        version: 0.1.0(@clerk/clerk-react@5.61.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@clerk/clerk-react':
         specifier: ^5.60.0
         version: 5.61.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      host-kit:
+        specifier: file:../Bilko/packages/host-kit
+        version: file:../Bilko/packages/host-kit(@clerk/clerk-react@5.61.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -127,12 +127,6 @@ packages:
   '@babel/types@7.29.0':
     resolution: {integrity: sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A==}
     engines: {node: '>=6.9.0'}
-
-  '@bilkobibitkov/host-kit@0.1.0':
-    resolution: {integrity: sha512-9yD4xTBykcnmCzhXXWTy59WtcwlOjwPj9dKKGpHlFX74zuMxlZbhJmf2SnQLTY+OCsAVRESKc/TZAiOO1tyJlw==}
-    peerDependencies:
-      '@clerk/clerk-react': ^5.0.0
-      react: ^18.0.0
 
   '@clerk/clerk-react@5.61.3':
     resolution: {integrity: sha512-W21aNEeHtqh3xJLuW5g2ydben/1D5pSnxsl/kCnv0IY1zma7lO+aIJ7Br2bR4FKKkiu695mPnjtY+fvkQmCXBg==}
@@ -672,6 +666,18 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
+  host-kit@file:../Bilko/packages/host-kit:
+    resolution: {directory: ../Bilko/packages/host-kit, type: directory}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+    peerDependencies:
+      '@clerk/clerk-react': ^5.0.0
+      '@playwright/test': '>=1.40'
+      react: ^18.0.0
+    peerDependenciesMeta:
+      '@playwright/test':
+        optional: true
+
   jiti@2.7.0:
     resolution: {integrity: sha512-AC/7JofJvZGrrneWNaEnJeOLUx+JlGt7tNa0wZiRPT4MY1wmfKjt2+6O2p2uz2+skll8OZZmJMNqeke7kKbNgQ==}
     hasBin: true
@@ -1022,11 +1028,6 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
-
-  '@bilkobibitkov/host-kit@0.1.0(@clerk/clerk-react@5.61.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@clerk/clerk-react': 5.61.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react: 18.3.1
 
   '@clerk/clerk-react@5.61.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -1411,6 +1412,11 @@ snapshots:
   glob-to-regexp@0.4.1: {}
 
   graceful-fs@4.2.11: {}
+
+  host-kit@file:../Bilko/packages/host-kit(@clerk/clerk-react@5.61.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1):
+    dependencies:
+      '@clerk/clerk-react': 5.61.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
 
   jiti@2.7.0: {}
 

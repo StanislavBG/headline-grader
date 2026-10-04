@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* host-kit ships its components pre-built in node_modules, which Tailwind skips by default. */
+@source "../node_modules/host-kit/dist";
 
 @theme {
   /* Warm base shared across bilko.run apps */
